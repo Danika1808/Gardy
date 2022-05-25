@@ -55,10 +55,10 @@ namespace WebShop_NULL.Controllers
                 {
                     ModelState.AddModelError("", "Некорректные логин и(или) пароль");
                 }
-                else if (!user.IsConfirmed)
-                {
-                    ModelState.AddModelError("", "Email не подтвержден");
-                }
+                //else if (!user.IsConfirmed)
+                //{
+                //    ModelState.AddModelError("", "Email не подтвержден");
+                //}
                 else
                 {
                     await _authenticationService.Authenticate(user,model.RememberMe != null);
@@ -84,7 +84,7 @@ namespace WebShop_NULL.Controllers
                 User user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
                 if (user == null)
                 {
-                    UserRole userRole = await _dbContext.UserRoles.FirstOrDefaultAsync(r => r.Name == "user");
+                    UserRole userRole = await _dbContext.UserRoles.FirstOrDefaultAsync(r => r.Name == "admin");
                     user = new User
                     {
                         Email = model.Email,

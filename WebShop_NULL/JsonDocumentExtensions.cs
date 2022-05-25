@@ -20,10 +20,10 @@ namespace WebShop_NULL
             }
         }
 
-        public static Dictionary<string, string> GetPropertyValues(this JsonDocument jDoc, Category category)
+        public static Dictionary<string, string> GetPropertyValues(this JsonDocument jDoc)
         {
             return JsonSerializer.Deserialize<Dictionary<string, object>>(jDoc.ToJsonString())
-                .ToDictionary(pair => category.Properties.FirstOrDefault(x => x.Id == int.Parse(pair.Key)).Name, pair => pair.Value.ToString());
+                .ToDictionary(pair => pair.Key.ToString(), pair => pair.Value.ToString());
         }
     }
 }

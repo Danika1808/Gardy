@@ -12,7 +12,7 @@ namespace WebShop_NULL.GraphQL.Dto
         public decimal Rating { get; set; }
         public CategoryDto Category { get; set; }
         public int ImageId { get; set; }
-        public ImageMetadata ImageMetadata { get; set; }
+        public ImageMetadata Image { get; set; }
         public Dictionary<string,string> AttributeValuePairs { get; set; }
         public ICollection<ReviewDto> Reviews { get; set; }
     }

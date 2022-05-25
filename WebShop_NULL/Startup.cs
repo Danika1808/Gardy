@@ -65,7 +65,7 @@ namespace WebShop_NULL
                 .AddSorting()
                 .SetPagingOptions(new PagingOptions
                 {
-                    MaxPageSize = 2
+                    MaxPageSize = 10
                 });
         }
 

@@ -16,12 +16,12 @@ namespace WebShop_NULL.GraphQL
 {
     public class Queries
     {
-        [UsePaging]
+        [UseOffsetPaging(IncludeTotalCount = true)]
         [UseFiltering]
         [UseSorting]
         public IQueryable<ProductDto> GetProducts([FromServices] ApplicationContext _dbContext, [FromServices] IMapper _mapper)
         {
-            return _dbContext.Products.Include(x => x.Category).ThenInclude(x => x.Properties).ProjectTo<ProductDto>(_mapper.ConfigurationProvider);
+            return _dbContext.Products.ProjectTo<ProductDto>(_mapper.ConfigurationProvider);
         }
     }
 }
