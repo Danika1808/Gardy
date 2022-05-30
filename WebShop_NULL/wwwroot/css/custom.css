@@ -27,7 +27,7 @@ body {
     flex-direction: column;
     width: 400px;
     height: 400px;
-    outline: 2px dashed #ff3f3f;
+    outline: 2px dashed #32CD32;
     outline-offset: -12px;
     background-color: ghostwhite;
     font-family: 'Segoe UI';
@@ -122,7 +122,7 @@ footer {
 
 .avatar {
     border-radius: 50%;
-    /*border: 1px solid #ff3f3f;*/
+    /*border: 1px solid #32CD32;*/
     /*box-shadow: #963c3c 1px 1px;*/
 }
 
@@ -362,7 +362,7 @@ footer {
 
         .admin-menu a:hover, a:active, a:focus {
             text-decoration: none;
-            background-color: rgb(255, 63, 63);
+            background-color: rgb(0,255,0);
         }
 
 .admin-content > .header {
@@ -495,7 +495,7 @@ footer {
     vertical-align: middle;
     border-top: solid 1px #eee;
     display: block;
-    color: #ff3f3f;
+    color: #32CD32;
 }
 .choose-btn:hover{
     text-decoration:none;
@@ -507,7 +507,7 @@ footer {
     display:block;
 }
 .choose-delivery-link:hover{
-    box-shadow: #ff3f3f 0 0 1px 1px;
+    box-shadow: #32CD32 0 0 1px 1px;
 }
 
 .property-field > * {
