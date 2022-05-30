@@ -62,16 +62,6 @@ namespace WebShop_NULL.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public void DeleteCategory([FromBody]string categoryName)
-        //{
-        //    _dbContext.Properties.RemoveRange(_dbContext.properties.ToList());
-
-        //    _dbContext.Categories.RemoveRange(_dbContext.Categories.ToList());
-
-        //    _dbContext.SaveChanges();
-        //}
-
         [HttpPost]
         public async Task<IActionResult> CreateCategory(AdminPanelCreateCategoryViewModel data)
         {
