@@ -23,5 +23,13 @@ namespace WebShop_NULL.GraphQL
         {
             return _dbContext.Products.ProjectTo<ProductDto>(_mapper.ConfigurationProvider);
         }
+
+        [UseOffsetPaging(IncludeTotalCount = true)]
+        [UseFiltering]
+        [UseSorting]
+        public IQueryable<CategoryDto> GetCategory([FromServices] ApplicationContext _dbContext, [FromServices] IMapper _mapper)
+        {
+            return _dbContext.Categories.ProjectTo<CategoryDto>(_mapper.ConfigurationProvider);
+        }
     }
 }
