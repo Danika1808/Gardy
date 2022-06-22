@@ -20,10 +20,25 @@ namespace WebShop_NULL
             }
         }
 
-        public static Dictionary<string, string> GetPropertyValues(this JsonDocument jDoc)
+        public class IdValue 
+        { 
+            public string Id { get; set; }
+            public string Value { get; set; }
+        }
+
+        public static List<IdValue> GetPropertyValues(this JsonDocument jDoc)
         {
-            return JsonSerializer.Deserialize<Dictionary<string, object>>(jDoc.ToJsonString())
+            var dict = JsonSerializer.Deserialize<Dictionary<string, object>>(jDoc.ToJsonString())
                 .ToDictionary(pair => pair.Key.ToString(), pair => pair.Value.ToString());
+
+            var result = new List<IdValue>();
+
+            foreach (var item in dict)
+            {
+                result.Add(new IdValue { Id = item.Key, Value = item.Value });
+            }
+
+            return result;
         }
     }
 }

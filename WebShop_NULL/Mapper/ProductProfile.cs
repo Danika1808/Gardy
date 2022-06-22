@@ -12,7 +12,7 @@ namespace WebShop_NULL.Mapper
         public ProductProfile()
         {
             CreateMap<Product, ProductDto>()
-                .ForMember(m => m.AttributeValuePairs, options => options.MapFrom(x => x.AttributeValues.GetPropertyValues()));
+                .ForMember(m => m.AttributeIdValue, options => options.MapFrom(x => x.AttributeValues.GetPropertyValues()));
         }
 
     }

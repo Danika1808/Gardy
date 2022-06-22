@@ -1,5 +1,6 @@
 ﻿using DomainModels;
 using System.Collections.Generic;
+using static WebShop_NULL.JsonDocumentExtensions;
 
 namespace WebShop_NULL.GraphQL.Dto
 {
@@ -13,7 +14,7 @@ namespace WebShop_NULL.GraphQL.Dto
         public CategoryDto Category { get; set; }
         public int ImageId { get; set; }
         public ImageMetadata Image { get; set; }
-        public Dictionary<string,string> AttributeValuePairs { get; set; }
+        public List<IdValue> AttributeIdValue { get; set; }
         public ICollection<ReviewDto> Reviews { get; set; }
     }
 }
